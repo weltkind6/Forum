@@ -10,22 +10,15 @@ import Rules from "./Components/Rules/Rules";
 import Users from "./Components/Users/Users";
 
 function App(props) {
-    debugger
     return (
         <div className='app-wrapper'>
             <Header/>
             <Sidebar/>
             <div className='main-content'>
-                <div>
-                    {props.state.forumsTeam.map((i) => <div>{i.name}</div>)}
-                </div>
-                <div>
-                    {props.state.dataFromBook.map((i) =>
-                        <div>{i.title} - {i.author} - {i.urs}</div>)}
-                </div>
-                <Route path='/news' render={() => <News/>}/>
-                <Route path='/forum' render={() => <Forum/>}/>
-                <Route path='/team' render={() => <Team/>}/>
+                <Route path='/news' render={() => <News news={props.state.dataFromBook}/>}/>
+                <Route path='/forum'
+                       render={() => <Forum data={props.state.comment} user={props.state.comment.author}/>}/>
+                <Route path='/team' render={() => <Team team={props.state.forumsTeam}/>}/>
                 <Route path='/rules' render={() => <Rules/>}/>
                 <Route path='/users' render={() => <Users/>}/>
             </div>
@@ -35,3 +28,5 @@ function App(props) {
 
 export default App;
 // In map method you should use a key value (of existing id ofc)
+
+//git config core.autocrlf true

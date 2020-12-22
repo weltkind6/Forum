@@ -1,15 +1,24 @@
 let data = {
+    comment: {
+        date: new Date(),
+        text: 'I hope you enjoy learning React!',
+        author: {
+            name: 'Hello Kitty',
+            avatarUrl: 'https://placekitten.com/g/64/64'
+        }
+    },
+
     forumsTeam: [
         {name: 'C85 Cooler', id: 1},
         {name: 'C85 Microwave oven', id: 2},
         {name: 'C85 Fridge', id: 3},
-        {name: 'C85 Washing mashine', id: 4},
+        {name: 'C85 Washing machine', id: 4},
         {name: 'C85 Systemnick', id: 5},
     ],
     dataFromBook: [
         {
             title: 'React learning',
-            urs: 'react otg',
+            url: 'react otg',
             author: 'Jordan Walke',
             comments: 5,
             id: 1
@@ -22,6 +31,8 @@ let data = {
             id: 3
         }
     ]
+
+
 }
 
 
