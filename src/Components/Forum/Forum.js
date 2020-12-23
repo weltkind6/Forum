@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Forum.module.css'
+import UserInfo from "./UserInfo/UserInfo";
 
 function formatDate(date) {
     return date.toLocaleDateString();
@@ -8,15 +8,7 @@ function formatDate(date) {
 const Forum = (props) => {
     return (
         <div className="Comment">
-            <div className="UserInfo">
-                <img className="Avatar"
-                     src={props.user.avatarUrl}
-                     alt={props.user.name}
-                />
-                <div className="UserInfo-name">
-                    {props.user.name}
-                </div>
-            </div>
+            <UserInfo uzer={props.user}/>
             <div className="Comment-text">
                 {props.data.text}
             </div>
@@ -26,5 +18,7 @@ const Forum = (props) => {
         </div>
     );
 }
+
+
 
 export default Forum
