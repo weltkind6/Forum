@@ -18,18 +18,24 @@ let data = {
     dataFromBook: [
         {
             title: 'React learning',
-            url: 'react otg',
+            url: 'https://ru.reactjs.org/docs/state-and-lifecycle.html',
             author: 'Jordan Walke',
             comments: 5,
             id: 1
         },
-        {
+        /*{
             title: 'React Native',
-            urs: 'react native lab',
+            url: 'https://ru.reactjs.org/docs/lists-and-keys.html#embedding-map-in-jsx',
             author: 'Johnatan Harisson',
             comments: 2,
             id: 3
-        }
+        }*/
+    ],
+    rules: [
+        {rule: 'Be kind to everyone', id: 3},
+        {rule: 'Be helpful', id: 4},
+        {rule: 'Do not say about moms plz', id: 5},
+
     ]
 
 

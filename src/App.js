@@ -6,8 +6,8 @@ import Header from "./Components/Header/Header";
 import News from "./Components/News/News";
 import Forum from "./Components/Forum/Forum";
 import Team from "./Components/Team/Team";
-import Rules from "./Components/Rules/Rules";
 import Users from "./Components/Users/Users";
+import RulesContainer from "./Components/Rules/RulesContainer";
 
 function App(props) {
     return (
@@ -19,7 +19,7 @@ function App(props) {
                 <Route path='/forum'
                        render={() => <Forum data={props.state.comment} user={props.state.comment.author}/>}/>
                 <Route path='/team' render={() => <Team team={props.state.forumsTeam}/>}/>
-                <Route path='/rules' render={() => <Rules/>}/>
+                <Route path='/rules' render={() => <RulesContainer rules={props.state.rules} state={props.state.dataFromBook}/>}/>
                 <Route path='/users' render={() => <Users/>}/>
             </div>
         </div>
