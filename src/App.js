@@ -17,7 +17,7 @@ function App(props) {
             <div className='main-content'>
                 <Route path='/news' render={() => <News news={props.state.dataFromBook}/>}/>
                 <Route path='/forum'
-                       render={() => <Forum data={props.state.comment} user={props.state.comment.author}/>}/>
+                       render={() => <Forum data={props.state.comment}/>}/>
                 <Route path='/team' render={() => <Team team={props.state.forumsTeam}/>}/>
                 <Route path='/rules' render={() => <RulesContainer rules={props.state.rules} state={props.state.dataFromBook}/>}/>
                 <Route path='/users' render={() => <Users/>}/>

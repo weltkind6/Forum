@@ -1,12 +1,11 @@
 let data = {
-    comment: {
-        date: new Date(),
-        text: 'I hope you enjoy learning React!',
-        author: {
-            name: 'Hello Kitty',
-            avatarUrl: 'https://placekitten.com/g/64/64'
-        }
-    },
+    comment: [
+        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
+        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
+        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
+        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
+        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
+    ],
 
     forumsTeam: [
         {name: 'C85 Cooler', id: 1},

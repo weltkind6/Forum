@@ -1,12 +1,15 @@
 import  React from  'react'
 import Avatar from "../Avatar/Avatar";
 
+
 const UserInfo = (props) => {
+    let ava = props.uzer.map(a => <Avatar info={a.avatarUrl} alt={a.name}/>)
+    //Вообщем тут при мар пропсы в info и все такое не нужны.
     return (
         <div className="UserInfo">
-            <Avatar info={props.uzer.avatarUrl} alt={props.uzer.name}/>
+            {ava}
             <div className="UserInfo-name">
-                {props.uzer.name}
+                {props.uzer.map(n => <div>{n.name}</div>)}
             </div>
         </div>
     )
