@@ -1,4 +1,7 @@
-let data = {
+import {rerenderEntireThree} from "../render";
+
+
+const data = {
     comment: [
         {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
         {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
@@ -6,7 +9,7 @@ let data = {
         {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
         {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
     ],
-
+    newPostText: '',
     forumsTeam: [
         {name: 'C85 Cooler', id: 1},
         {name: 'C85 Microwave oven', id: 2},
@@ -38,6 +41,24 @@ let data = {
     ]
 
 
+}
+
+export const addNewPost = () => {
+    const newPost = {
+        date: new Date(),
+        text: data.newPostText,
+        name: 'Hello Kitty2',
+        avatarUrl: 'https://avatarfiles.alphacoders.com/893/thumb-89303.gif'
+    }
+    data.comment.push(newPost)
+    data.newPostText = ''
+    rerenderEntireThree(data)
+}
+
+window.data = data
+export const onNewPostChange = (newText) => {
+    data.newPostText = newText
+    rerenderEntireThree(data)
 }
 
 

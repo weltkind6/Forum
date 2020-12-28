@@ -1,5 +1,7 @@
 import React from 'react'
 import UserInfo from "./UserInfo/UserInfo";
+import {onNewPostChange} from "../../Redux/state";
+
 
 /*
 function formatDate(date) {
@@ -16,12 +18,19 @@ const Forum = (props) => {
     }
     const addPost = () => {
         let text = newPostText.current.value
+
+        props.addNewPost(text)
+    }
+    const onPostChange = () => {
+        let text = newPostText.current.value
+        console.log(text)
+        onNewPostChange(text)
     }
     return (
         <div>
             <Comment ifnoData={props.data} userData={props.data}/>
             <div>
-                <div><textarea ref={newPostText} onKeyDown={onKeyDown}/></div>
+                <div><textarea ref={newPostText} onKeyDown={onKeyDown} value={props.newPostText} onChange={onPostChange}/></div>
                 <div><button onClick={addPost} >Got it!</button></div>
             </div>
         </div>
