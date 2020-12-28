@@ -18,7 +18,7 @@ function App(props) {
                 <Route path='/news' render={() => <News news={props.state.dataFromBook}/>}/>
                 <Route path='/forum'
                        render={() => <Forum data={props.state.comment} addNewPost={props.addNewPost} newPostText={props.state.newPostText}/>}/>
-                <Route path='/team' render={() => <Team team={props.state.forumsTeam}/>}/>
+                <Route path='/team' render={() => <Team team={props.state.forumsTeam} newForumUser={props.state.newForumUser}/>}/>
                 <Route path='/rules' render={() => <RulesContainer rules={props.state.rules} state={props.state.dataFromBook}/>}/>
                 <Route path='/users' render={() => <Users/>}/>
             </div>

@@ -1,45 +1,28 @@
 import React from 'react'
 import styles from './Team.module.css'
+import {addNewUser} from "../../Redux/state";
 
-/*
+
 const Team = (props) => {
-    const teamLineUp = props.team.map((item)=> <div key={item.id}>{item.name}</div>)
+    debugger
+    const teamLineUp = props.team.map((item) => <div key={item.id}>{item.name}</div>)
+    const getNewUser = React.createRef()
+
+    const addUser = () => {
+        const text = getNewUser.current.value
+        addNewUser(text)
+    }
+
     return (
-        <div>{teamLineUp}</div>
-    )
-}*/
-
-
-class Team extends React.Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: 'Alex'
-        }
-        this.handleClick = this.handleClick.bind(this)
-    }
-    handleClick() {
-        this.setState({
-            name: 'Ilay'
-        })
-    }
-
-    render() {
-        const addNewTeamer = React.createRef()
-        const teamLineUp = this.props.team.map((item) => <div key={item.id}>{item.name}</div>)
-
-        return (
+        <div>
+            <div>{teamLineUp}</div>
             <div>
-                <div>{teamLineUp}</div>
-                <div>
-                    <h3>{this.state.name}</h3>
-                    <textarea value='Got it!' ref={addNewTeamer}/>
-                    <button onClick={this.handleClick}>Add teammate!</button>
-                </div>
+                <textarea value={props.newForumUser} ref={getNewUser}/>
+                <button onClick={addUser}>ADD</button>
             </div>
-        )
-    }
+        </div>
+    )
 }
+
 
 export default Team

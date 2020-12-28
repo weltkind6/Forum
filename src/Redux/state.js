@@ -17,6 +17,7 @@ const data = {
         {name: 'C85 Washing machine', id: 4},
         {name: 'C85 Systemnick', id: 5},
     ],
+    newForumUser: 'C85Sila',
     dataFromBook: [
         {
             title: 'React learning',
@@ -25,13 +26,6 @@ const data = {
             comments: 5,
             id: 1
         },
-        /*{
-            title: 'React Native',
-            url: 'https://ru.reactjs.org/docs/lists-and-keys.html#embedding-map-in-jsx',
-            author: 'Johnatan Harisson',
-            comments: 2,
-            id: 3
-        }*/
     ],
     rules: [
         {rule: 'Be kind to everyone', id: 3},
@@ -54,12 +48,19 @@ export const addNewPost = () => {
     data.newPostText = ''
     rerenderEntireThree(data)
 }
-
-window.data = data
 export const onNewPostChange = (newText) => {
     data.newPostText = newText
     rerenderEntireThree(data)
 }
 
+export const addNewUser = () => {
+    const newUser = {
+        name: data.newForumUser,
+        id: 88
+    }
+    data.forumsTeam.push(newUser)
+    rerenderEntireThree(data)
+}
 
+window.data = data
 export default data

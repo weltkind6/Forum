@@ -18,7 +18,6 @@ const Forum = (props) => {
     }
     const addPost = () => {
         let text = newPostText.current.value
-
         props.addNewPost(text)
     }
     const onPostChange = () => {
