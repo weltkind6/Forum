@@ -17,7 +17,7 @@ const data = {
         {name: 'C85 Washing machine', id: 4},
         {name: 'C85 Systemnick', id: 5},
     ],
-    newForumUser: 'C85Sila',
+    newForumUser: '',
     dataFromBook: [
         {
             title: 'React learning',
@@ -59,6 +59,11 @@ export const addNewUser = () => {
         id: 88
     }
     data.forumsTeam.push(newUser)
+    data.newForumUser = ''
+    rerenderEntireThree(data)
+}
+export const onNewUserAdd = (newUser) => {
+    data.newForumUser = newUser
     rerenderEntireThree(data)
 }
 

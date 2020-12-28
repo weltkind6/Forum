@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Team.module.css'
-import {addNewUser} from "../../Redux/state";
+import {addNewUser, onNewUserAdd} from "../../Redux/state";
 
 
 const Team = (props) => {
@@ -12,12 +12,16 @@ const Team = (props) => {
         const text = getNewUser.current.value
         addNewUser(text)
     }
+    const onNewUserChange = () => {
+        const text = getNewUser.current.value
+        onNewUserAdd(text)
+    }
 
     return (
         <div>
             <div>{teamLineUp}</div>
             <div>
-                <textarea value={props.newForumUser} ref={getNewUser}/>
+                <textarea value={props.newForumUser} ref={getNewUser} onChange={onNewUserChange}/>
                 <button onClick={addUser}>ADD</button>
             </div>
         </div>

@@ -22,7 +22,6 @@ const Forum = (props) => {
     }
     const onPostChange = () => {
         let text = newPostText.current.value
-        console.log(text)
         onNewPostChange(text)
     }
     return (
