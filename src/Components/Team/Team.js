@@ -17,6 +17,7 @@ const Team = (props) => {
         onNewUserAdd(text)
     }
 
+
     return (
         <div>
             <div>{teamLineUp}</div>

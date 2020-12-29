@@ -3,11 +3,36 @@ import {rerenderEntireThree} from "../render";
 
 const data = {
     comment: [
-        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
-        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
-        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
-        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
-        {date: new Date(),  text: 'I hope you enjoy learning React!', name: 'Hello Kitty', avatarUrl: 'https://placekitten.com/g/64/64'},
+        {
+            date: new Date(),
+            text: 'I hope you enjoy learning React!',
+            name: 'Hello Kitty',
+            avatarUrl: 'https://placekitten.com/g/64/64'
+        },
+        {
+            date: new Date(),
+            text: 'I hope you enjoy learning React!',
+            name: 'Hello Kitty',
+            avatarUrl: 'https://placekitten.com/g/64/64'
+        },
+        {
+            date: new Date(),
+            text: 'I hope you enjoy learning React!',
+            name: 'Hello Kitty',
+            avatarUrl: 'https://placekitten.com/g/64/64'
+        },
+        {
+            date: new Date(),
+            text: 'I hope you enjoy learning React!',
+            name: 'Hello Kitty',
+            avatarUrl: 'https://placekitten.com/g/64/64'
+        },
+        {
+            date: new Date(),
+            text: 'I hope you enjoy learning React!',
+            name: 'Hello Kitty',
+            avatarUrl: 'https://placekitten.com/g/64/64'
+        },
     ],
     newPostText: '',
     forumsTeam: [
@@ -31,12 +56,26 @@ const data = {
         {rule: 'Be kind to everyone', id: 3},
         {rule: 'Be helpful', id: 4},
         {rule: 'Do not say about moms plz', id: 5},
-
-    ]
+    ],
+    news: {
+        someNews: [
+            {new: 'Putin go hard', id: '13'},
+            {new: 'Trump go hard', id: '14'},
+            {new: 'Lukawenko go hard', id: '15'},
+            {new: 'Ramzan go hard', id: '16'},
+            {new: 'Macron go hard', id: '17'},
+        ],
+        goodNews: [
+            {gnew: 'We are ont the way to create creative society', id: 44},
+            {gnew: 'The new year is near!', id: 45},
+            {gnew: 'I lear Reac very well', id: 46},
+        ],
+        gotNewNews: ''
+    }
 
 
 }
-
+///////////////////////////////// Flux
 export const addNewPost = () => {
     const newPost = {
         date: new Date(),
@@ -52,6 +91,7 @@ export const onNewPostChange = (newText) => {
     data.newPostText = newText
     rerenderEntireThree(data)
 }
+//////////////////////////////////////
 
 export const addNewUser = () => {
     const newUser = {
@@ -67,5 +107,20 @@ export const onNewUserAdd = (newUser) => {
     rerenderEntireThree(data)
 }
 
-window.data = data
+export const onAddNews = () => {
+    const addNew = {
+        gnew: data.news.gotNewNews,
+        id: 47
+    }
+    data.news.goodNews.push(addNew)
+    data.news.gotNewNews = ''
+    rerenderEntireThree(data)
+
+}
+export const onNewsChange = (goToNew) => {
+    data.news.gotNewNews = goToNew
+    rerenderEntireThree(data)
+}
+
+
 export default data

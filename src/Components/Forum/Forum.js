@@ -10,25 +10,23 @@ function formatDate(date) {
 */
 
 const Forum = (props) => {
-    const newPostText = React.createRef()
     const onKeyDown = (e) => {
         if(e.code === 'Enter') {
             addPost()
         }
     }
     const addPost = () => {
-        let text = newPostText.current.value
-        props.addNewPost(text)
+        props.addNewPost(props.text)
     }
-    const onPostChange = () => {
-        let text = newPostText.current.value
+    const onPostChange = (event) => {
+        let text = event.target.value
         onNewPostChange(text)
     }
     return (
         <div>
             <Comment ifnoData={props.data} userData={props.data}/>
             <div>
-                <div><textarea ref={newPostText} onKeyDown={onKeyDown} value={props.newPostText} onChange={onPostChange}/></div>
+                <div><textarea onKeyDown={onKeyDown} value={props.newPostText} onChange={onPostChange}/></div>
                 <div><button onClick={addPost} >Got it!</button></div>
             </div>
         </div>

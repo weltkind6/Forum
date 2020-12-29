@@ -15,7 +15,8 @@ function App(props) {
             <Header/>
             <Sidebar/>
             <div className='main-content'>
-                <Route path='/news' render={() => <News news={props.state.dataFromBook}/>}/>
+                <Route path='/news' render={() => <News news={props.state.dataFromBook} gotNewNews={props.state.news.gotNewNews}
+                news2={props.state.news.goodNews}/>}/>
                 <Route path='/forum'
                        render={() => <Forum data={props.state.comment} addNewPost={props.addNewPost} newPostText={props.state.newPostText}/>}/>
                 <Route path='/team' render={() => <Team team={props.state.forumsTeam} newForumUser={props.state.newForumUser}/>}/>
