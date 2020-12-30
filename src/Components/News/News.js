@@ -6,14 +6,11 @@ const News = (props) => {
     const getNews = props.news.map((n) => <div key={n.id}>{n.title} - {n.author} - {n.url}</div>)
     const gotNews = props.news2.map(n => <div>{n.gnew}</div>)
 
-    const getNewNews = React.createRef()
-
     const addNew = () => {
-        const text = getNewNews.current.value
-        onAddNews(text)
+        onAddNews()
     }
-    const changeNews = () => {
-        const text = getNewNews.current.value
+    const changeNews = (e) => {
+        const text = e.target.value
         onNewsChange(text)
     }
     return (
@@ -21,7 +18,7 @@ const News = (props) => {
             <div>{getNews}</div>
             <div>{gotNews}</div>
             <div>
-                <textarea ref={getNewNews} value={props.gotNewNews} onChange={changeNews}/>
+                <textarea value={props.gotNewNews} onChange={changeNews}/>
                 <button onClick={addNew}>Push</button>
             </div>
         </div>
