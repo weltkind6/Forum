@@ -1,5 +1,4 @@
-import React from 'react';
-import './index.css';
+
 import reportWebVitals from './reportWebVitals';
 import {rerenderEntireThree} from "./render";
 import data from "./Redux/state";
