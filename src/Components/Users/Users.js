@@ -13,39 +13,45 @@ class Users extends React.Component {
         pageTitle: 'A happy new Year! Plz change your present!',
         newBike: '',
         showBikes: false
-
     }
-
-    changeTitle = () => {
+    getShowBikes = () => {
         this.setState({
             showBikes: !this.state.showBikes
         })
     }
-    onChangeInput = (e) => {
-        console.log(e.target.value)
+    onChangeName = (name, id) => {
+        const bike = this.state.bikes[id]
+        bike.model = name
+        const bikes = [...this.state.bikes]
+        bikes[id] = bike
+        this.setState({bikes})
     }
-    onChangeTitle = () => {
-        this.setState({
-            pageTitle: 'It comes and i wish i will be very productive.)'
-        })
-    }
-    onChangeName = () => {
-        this.setState({
 
-        })
+    onDelete = (id) => {
+        const bikes = [...this.state.bikes]
+        bikes.splice(id, 1)
+        this.setState({bikes})
     }
+
+    // Нашли нужный байк который надо изменить
+    // Изменяем model на новые имя.
+    // Скопировали state
+    // Обратились к новому массиву по id и сказали что он будет === новому байку.
+    // setState
+
 
     render() {
         return (
             <div>
                 <div><h4>{this.state.pageTitle}</h4></div>
-                <button onClick={this.changeTitle}>Show</button>
-                <button onClick={this.onChangeTitle}>Change</button>
+                <button onClick={this.getShowBikes}>Show</button>
                 <div>
-                    {
-                        this.state.showBikes === true ?
-                            this.state.bikes.map((b) => <Bikes model={b.model} year={b.year} key={b.id}/>)
-                            : null
+                    {this.state.showBikes === true ?
+                        this.state.bikes.map((b, id) =>
+                            <Bikes model={b.model} year={b.year} key={id}
+                                   onChangeName={(e) => this.onChangeName(e.target.value, id)
+                                   }
+                                   onDelete={() => this.onDelete(id)}/>) : null
                     }
                 </div>
             </div>
